@@ -1,0 +1,14 @@
+#disable laptop display
+xrandr --output eDP --off &
+
+#network manager applet
+nm-applet &
+
+#tint2 
+tint2 &
+
+#compton
+compton &
+
+#nitrogen
+nitrogen --restore &
