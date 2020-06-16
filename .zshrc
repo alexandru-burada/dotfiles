@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 alias q="exit"
 alias r="ranger"
 alias shutdown="sudo systemctl poweroff"
-alias relbar="pkill polybar && polybar mybar &"
+alias relbar="pkill polybar && polybar default &"
 alias reboot="sudo systemctl reboot"
 source /home/trak/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PAGER=most
