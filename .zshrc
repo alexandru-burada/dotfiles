@@ -8,7 +8,8 @@ export ZSH="/home/trak/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# gallois fallback
+ZSH_THEME="gallois"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,7 +69,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git history-substring-search zsh-autosuggestions zsh-abbr)
+plugins=(git history-substring-search zsh-autosuggestions zsh-abbr docker docker-compose kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,10 +98,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias v="nvim"
 alias q="exit"
+alias k="kubectl"
 alias r="ranger"
 alias shutdown="sudo systemctl poweroff"
-alias relbar="pkill polybar && polybar default &"
+alias relbar="pkill polybar && polybar mybar &"
 alias reboot="sudo systemctl reboot"
 source /home/trak/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PAGER=most
+export PATH=/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/trak/.local/bin
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+#(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+#cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+#source ~/.cache/wal/colors-tty.sh

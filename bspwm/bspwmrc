@@ -17,6 +17,9 @@ $HOME/.config/polybar/launch.sh
 #network-manager-applet
 nm-applet &
 
+#pywal
+#wal -R
+
 bspc config border_width         1
 bspc config window_gap          12
 
